@@ -2,9 +2,7 @@ import Head from "next/head";
 import React from "react";
 import styles from "../styles/Home.module.css";
 
-interface Props {}
-
-const Home: React.FC<Props> = (props) => {
+const Home: React.FC = () => {
   return (
     <div className="pt-5">
       <h1>Hello!</h1>

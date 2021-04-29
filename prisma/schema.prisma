@@ -17,17 +17,10 @@ model User {
   email String? @unique
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @updatedAt @map(name: "updated_at")
-  shippings ShippingDetail[]
+  address String?
+  phone String?
   orders Order[]
   @@map(name: "users")
-}
-
-model ShippingDetail {
-  id Int @default(autoincrement()) @id
-  address String?
-  user User? @relation(fields: [userId], references: [id])
-  userId Int?
-  @@map(name: "shipping_details")
 }
 
 model Order {
