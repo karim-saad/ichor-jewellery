@@ -15,12 +15,15 @@ const LandingPage: React.FC = () => {
         Hello!
       </div>
       <div className='flex justify-center my-1'>
-        Thanks for visiting <p className='font-medium ml-1'>Ichor Jewellery</p>,
-        we are so appreciative to have you here!
+        Thanks for visiting Ichor Jewellery, we are so appreciative to have you
+        here!
       </div>
       <div className='flex justify-center my-1'>
         Unfortunately, we are still under construction, so please check back
         soon.
+      </div>
+      <div className='flex justify-center my-1'>
+        For now, please check out our Instagram!
       </div>
       <div className='text-2xl flex justify-center'>
         <a href='https://www.instagram.com/ichor.jewellery/'>
