@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useSession } from 'next-auth/client';
+import { useRouter } from 'next/router';
+import { signOut, useSession } from 'next-auth/client';
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -15,7 +15,16 @@ const Header: React.FC = () => {
         <img className='h-8 w-8 mr-3' src='necklace.svg' alt='Necklace' />
         <span className='font-semibold font text-3xl text-blue-900'>ichor</span>
       </div>
-      {session && <div>Hello {session.user.name}</div>}
+      {session && (
+        <div className='flex content-center'>
+          <div className='content-center m-0'>
+            Hello {session.user.name.split(' ')[0]}
+          </div>
+          <button onClick={() => signOut()}>
+            <img className='h-6 w-6 ml-3' src='logout.svg' alt='Logout' />
+          </button>
+        </div>
+      )}
       {!session && (
         <Link href='/api/auth/signin'>
           <a data-active={isActive('/signup')}>
