@@ -1,7 +1,12 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useSession } from 'next-auth/client';
 
 const Header: React.FC = () => {
+  const router = useRouter();
+  const isActive: (pathname: string) => boolean = (pathname) =>
+    router.pathname === pathname;
   const [session, loading] = useSession();
 
   return (
@@ -12,9 +17,11 @@ const Header: React.FC = () => {
       </div>
       {session && <div>Hello {session.user.name}</div>}
       {!session && (
-        <button className='rounded px-2 border-blue-900 bg-blue-400'>
-          Log In
-        </button>
+        <Link href='/api/auth/signin'>
+          <a data-active={isActive('/signup')}>
+            <img className='h-8 w-8' src='login.svg' alt='Login' />
+          </a>
+        </Link>
       )}
     </nav>
   );
