@@ -22,3 +22,8 @@ There are a couple of main reasons I decided to go for Next.js
 - [NextJS, Prisma + NextAuth](https://vercel.com/guides/nextjs-prisma-postgres)
 - [Tailwind CheatSheet](https://tailwindcomponents.com/cheatsheet/)
 - [Responsive Header](https://tailwindcomponents.com/component/responsive-header)
+
+## TO DO
+
+- Google OAuth
+- Fix URL

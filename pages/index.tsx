@@ -7,9 +7,9 @@ const LandingPage: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>Ichor Jewellery</title>
+        <title>Ichor</title>
         <link rel='shortcut icon' href='/necklace.svg' />
-        <meta property='og:title' content='Ichor Jewellery' key='title' />
+        <meta property='og:title' content='Ichor' key='title' />
       </Head>
       <div className='text-2xl font-medium flex justify-center my-2'>
         Hello!
