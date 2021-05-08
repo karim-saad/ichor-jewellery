@@ -9,7 +9,13 @@ const LandingPage: React.FC = () => {
       <Head>
         <title>Ichor</title>
         <link rel='shortcut icon' href='/necklace.svg' />
-        <meta property='og:title' content='Ichor' key='title' />
+        <meta property='og:title' content='Ichor Jewellery' />
+        <meta property='og:image' content='/logo.png' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:description'
+          content="Self expression is one's Ichor"
+        />
       </Head>
       <div className='text-2xl font-medium flex justify-center my-2'>
         Hello!
