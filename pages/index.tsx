@@ -18,15 +18,15 @@ const LandingPage: React.FC = () => {
       <div className='text-2xl font-medium flex justify-center my-2'>
         Hello!
       </div>
-      <div className='flex justify-center my-1'>
+      <div className='flex justify-center my-1 text-sm lg:text-lg text-center mx-8'>
         Thanks for visiting Ichor Jewellery, we are so appreciative to have you
         here!
       </div>
-      <div className='flex justify-center my-1'>
+      <div className='flex justify-center my-1 text-sm lg:text-lg text-center mx-8'>
         Unfortunately, we are still under construction, so please check back
         soon.
       </div>
-      <div className='flex justify-center my-1'>
+      <div className='flex justify-center my-1 text-sm lg:text-lg text-center mx-8'>
         For now, please check out our Instagram!
       </div>
       <div className='text-2xl flex justify-center'>
