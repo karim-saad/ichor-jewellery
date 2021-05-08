@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const LandingPage: React.FC = () => {
   return (
