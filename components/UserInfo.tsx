@@ -1,15 +1,13 @@
 export type UserProps = {
-  firstname: string;
-  lastname: string;
+  name: string;
 };
 
 const UserInfo: React.FC<{ user: UserProps }> = ({ user }) => {
-  const { firstname, lastname } = user;
+  const { name } = user;
 
   return (
     <div>
-      <div>{firstname}</div>
-      <div>{lastname}</div>
+      <div>{name}</div>
     </div>
   );
 };
