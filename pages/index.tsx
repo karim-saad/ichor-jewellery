@@ -32,7 +32,7 @@ const LandingPage: React.FC = () => {
       </div>
       <div className='text-2xl flex justify-center'>
         <a href='https://www.instagram.com/ichor.jewellery/'>
-          <img className='h-12 w-12' src='instagram.svg' alt='Instagram' />
+          <img className='h-16 w-16 mt-2' src='instagram.svg' alt='Instagram' />
         </a>
       </div>
     </div>
