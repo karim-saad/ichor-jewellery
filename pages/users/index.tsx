@@ -1,16 +1,15 @@
-import { GetServerSideProps } from "next";
-import UserInfo, { UserProps } from "../../components/UserInfo";
-import prisma from "../../lib/prisma";
+import { GetServerSideProps } from 'next';
+import UserInfo, { UserProps } from '../../components/UserInfo';
+import prisma from '../../lib/prisma';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const users = await prisma.user.findMany({
     select: {
-      firstname: true,
-      lastname: true,
-    },
+      name: true
+    }
   });
   return {
-    props: { users },
+    props: { users }
   };
 };
 
