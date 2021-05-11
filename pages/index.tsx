@@ -1,12 +1,13 @@
-import Head from 'next/head';
 import React from 'react';
+import Head from 'next/head';
 
 const LandingPage: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>Ichor</title>
+        <title>Ichor Jewellery</title>
         <link rel='shortcut icon' href='/necklace.svg' />
+        <meta property='og:url' content='https://www.ichorjewellery.com' />
         <meta property='og:title' content='Ichor Jewellery' />
         <meta property='og:image' content='/logo.png' />
         <meta property='og:type' content='website' />
