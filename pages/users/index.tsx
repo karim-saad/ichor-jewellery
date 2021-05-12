@@ -21,8 +21,8 @@ const UsersPage: React.FC<Props> = (props) => {
   const { users } = props;
   return (
     <div>
-      {users.map((user) => (
-        <UserInfo user={user} />
+      {users.map((user, idx) => (
+        <UserInfo key={idx} user={user} />
       ))}
     </div>
   );

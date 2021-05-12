@@ -10,16 +10,24 @@ const Header: React.FC = () => {
   const [session, loading] = useSession();
 
   return (
-    <nav className='flex p-5 justify-between bg-blue-300'>
-      <div className='flex content-center'>
-        <img className='h-8 w-8 mr-3' src='necklace.svg' alt='Necklace' />
-        <span className='font-semibold font text-3xl text-blue-900'>ichor</span>
+    <nav className='flex p-5 justify-between bg-yellow-200'>
+      <div className='flex'>
+        <img
+          src='/logo.png'
+          alt='Ichor Jewellery'
+          className='rounded w-12 h-12 mr-2'
+        />
+        <span className='text-3xl text-yellow-500 align-bottom'>
+          Ichor Jewellery
+        </span>
       </div>
       {session && (
         <div className='flex content-center'>
-          <div className='content-center m-0'>
-            Hello {session.user.name.split(' ')[0]}
-          </div>
+          <img
+            className='rounded h-10 w-10'
+            src={session.user.image}
+            alt='User Profile Picture'
+          />
           <button onClick={() => signOut()}>
             <img className='h-6 w-6 ml-3' src='logout.svg' alt='Logout' />
           </button>
