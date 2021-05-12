@@ -10,14 +10,14 @@ const Header: React.FC = () => {
   const [session, loading] = useSession();
 
   return (
-    <nav className='flex p-5 justify-between bg-blue-300'>
-      <div className='flex content-center'>
+    <nav className='flex p-5 justify-between bg-yellow-200'>
+      <div className='flex'>
         <img
           src='/logo.png'
           alt='Ichor Jewellery'
           className='rounded w-12 h-12 mr-2'
         />
-        <span className='font-semibold font text-3xl text-blue-900'>
+        <span className='text-3xl text-yellow-500 align-bottom'>
           Ichor Jewellery
         </span>
       </div>
