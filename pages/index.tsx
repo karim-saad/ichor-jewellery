@@ -5,12 +5,11 @@ const LandingPage: React.FC = () => {
   return (
     <Layout layoutProps={{ title: 'Ichor Jewellery' }}>
       <div>
-        <div className='text-2xl font-medium flex justify-center my-2'>
-          Hello!
-        </div>
+        <h1 className='text-2xl font-medium flex justify-center my-2'>
+          Ichor Jewellery
+        </h1>
         <div className='flex justify-center my-1 text-sm lg:text-lg text-center mx-8'>
-          Thanks for visiting Ichor Jewellery, we are so appreciative to have
-          you here!
+          Thanks for our page, we are so appreciative to have you here!
         </div>
         <div className='flex justify-center my-1 text-sm lg:text-lg text-center mx-8'>
           Unfortunately, we are still under construction, so please check back
