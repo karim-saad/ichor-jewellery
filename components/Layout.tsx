@@ -18,27 +18,49 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
       </Head>
       <body className='flex flex-col min-h-screen'>
         <header>
-          <nav className='flex p-5 justify-between bg-yellow-100'>
+          <div className='flex p-2 justify-center bg-yellow-200'>
+            Under Construction!
+            <img
+              src='/technics.svg'
+              alt='Construction'
+              className='w-6 h-6 ml-2'
+            />
+          </div>
+          <nav className='flex p-4 justify-between bg-yellow-100'>
             <div className='flex items-center'>
               <img
                 src='/logo.png'
                 alt='Ichor Jewellery'
-                className='rounded w-12 h-12 mr-3'
+                className='rounded w-10 h-10 mr-3'
               />
-              <span className='text-2xl'>Ichor Jewellery</span>
+              <span className='text-xl'>Ichor Jewellery</span>
             </div>
             <div className='flex'>
-              <img src='/user.svg' alt='Account' className='w-10 h-10' />
+              <img src='/user.svg' alt='Account' className='w-7 h-7' />
               <img
                 src='/shopping-cart.svg'
                 alt='Cart'
-                className='w-11 h-11 ml-3'
+                className='w-8 h-8 ml-3'
               />
             </div>
           </nav>
         </header>
         <main className='flex-grow'>{children}</main>
-        <footer className='relative pb-5'>Ichor Jewellery</footer>
+        <footer className='relative flex justify-between p-3 bg-yellow-100'>
+          Ichor Jewellery 2021
+          <div className='flex'>
+            <a href='https://www.instagram.com/ichor.jewellery/'>
+              <img
+                src='/instagram-black.svg'
+                alt='Instagram'
+                className='w-6 h-6'
+              />
+            </a>
+            <a href='https://www.etsy.com/au/shop/IchorJewellery'>
+              <img src='/etsy-black.svg' alt='Etsy' className='w-6 h-6 ml-3' />
+            </a>
+          </div>
+        </footer>
       </body>
     </>
   );
