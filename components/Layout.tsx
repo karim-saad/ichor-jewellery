@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
-import { EtsyBlackPic, InstagramBlackPic, LogoPic, ShoppingCartPic, TechnicsPic, UserPic } from '../public';
+
+import { EtsyBlackPic, InstagramBlackPic, TechnicsPic } from '../public';
+import Navbar from '../components/Navbar';
 
 interface Props {
   layoutProps: {
@@ -36,27 +38,12 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
             <Image
               src={TechnicsPic}
               alt='Construction'
-              className='w-6 h-6 ml-2'
+              height='6'
+              width='6'
+              className='ml-2'
             />
           </div>
-          <nav className='flex p-4 justify-between bg-yellow-100'>
-            <div className='flex items-center'>
-              <Image
-                src={LogoPic}
-                alt='Ichor Jewellery'
-                className='rounded w-10 h-10 mr-3'
-              />
-              <span className='text-xl'>Ichor Jewellery</span>
-            </div>
-            <div className='flex'>
-              <Image src={UserPic} alt='Account' className='w-7 h-7' />
-              <Image
-                src={ShoppingCartPic}
-                alt='Cart'
-                className='w-8 h-8 ml-3'
-              />
-            </div>
-          </nav>
+          <Navbar />
         </header>
         <main className='flex-grow'>{children}</main>
         <footer className='relative flex justify-between p-3 bg-yellow-100'>
@@ -66,11 +53,17 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
               <Image
                 src={InstagramBlackPic}
                 alt='Instagram'
-                className='w-6 h-6'
+                height='6'
+                width='6'
               />
             </a>
             <a href='https://www.etsy.com/au/shop/IchorJewellery'>
-              <Image src={EtsyBlackPic} alt='Etsy' className='w-6 h-6 ml-3' />
+              <Image
+                src={EtsyBlackPic}
+                alt='Etsy'
+                height='6'
+                width='6'
+                className='ml-3' />
             </a>
           </div>
         </footer>
