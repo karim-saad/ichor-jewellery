@@ -33,15 +33,16 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
       </Head>
       <body className='flex flex-col min-h-screen'>
         <header>
-          <div className='flex p-2 justify-center bg-yellow-200'>
+          <div className='flex p-1 justify-center bg-yellow-200'>
             Under Construction!
-            <Image
-              src={TechnicsPic}
-              alt='Construction'
-              height='6'
-              width='6'
-              className='ml-2'
-            />
+            <div className='ml-2'>
+              <Image
+                src={TechnicsPic}
+                alt='Construction'
+                height='20'
+                width='20'
+              />
+            </div>
           </div>
           <Navbar />
         </header>
@@ -53,17 +54,17 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
               <Image
                 src={InstagramBlackPic}
                 alt='Instagram'
-                height='6'
-                width='6'
+                height='24'
+                width='24'
               />
             </a>
-            <a href='https://www.etsy.com/au/shop/IchorJewellery'>
+            <a className='ml-3' href='https://www.etsy.com/au/shop/IchorJewellery'>
               <Image
                 src={EtsyBlackPic}
                 alt='Etsy'
-                height='6'
-                width='6'
-                className='ml-3' />
+                height='24'
+                width='24'
+              />
             </a>
           </div>
         </footer>
