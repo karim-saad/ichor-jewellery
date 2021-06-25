@@ -13,8 +13,10 @@
       "prefer-single"
     ],
     "eol-last": [
-      "error",
-      "always"
+      "error"
+    ],
+    "sort-imports": [
+      "error"
     ]
   }
 }
