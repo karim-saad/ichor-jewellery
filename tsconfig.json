@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -23,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.tsx",
-    "tailwind.config.ts"
+    "tailwind.config.js",
+    "postcss.config.js"
   ],
   "exclude": [
     "node_modules"
