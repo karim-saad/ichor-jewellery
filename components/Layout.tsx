@@ -12,24 +12,25 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children, layoutProps }) => {
+  const { title } = layoutProps;
   return (
     <>
       <Head>
-        <title>{layoutProps.title}</title>
+        <title>{title}</title>
         <meta charSet='utf-8' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta property='viewport' content='initial-scale=1.0, width=device-width' />
         <link rel='shortcut icon' href='/necklace.svg' />
         <meta
-          name='description'
+          property='description'
           content="Bespoke jewellery made for all. Self expression is one's Ichor. Sydney, Australia."
         />
-        <meta name='robots' content='index, follow' />
-        <meta name='og:title' content='Ichor Jewellery' />
+        <meta property='robots' content='index, follow' />
+        <meta property='og:title' content='Ichor Jewellery' />
         <meta
-          name='og:description'
+          property='og:description'
           content="Self expression is one's Ichor. Bespoke jewellery made for all."
         />
-        <meta name='og:image' content='https://ichorjewellery.com/logo.png' />
+        <meta property='og:image' content='https://ichorjewellery.com/logo.png' />
       </Head>
       <body className='flex flex-col min-h-screen'>
         <header>
