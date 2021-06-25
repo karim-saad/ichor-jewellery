@@ -19,7 +19,7 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
         <title>{title}</title>
         <meta charSet='utf-8' />
         <meta property='viewport' content='initial-scale=1.0, width=device-width' />
-        <link rel='shortcut icon' href='/necklace.svg' />
+        <link rel='shortcut icon' href='/static/necklace.svg' />
         <meta
           property='description'
           content="Bespoke jewellery made for all. Self expression is one's Ichor. Sydney, Australia."
