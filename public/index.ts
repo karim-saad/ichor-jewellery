@@ -1,11 +1,1 @@
-export { default as EtsyBlackPic } from './etsy-black.svg';
-export { default as EtsyPic } from './etsy.svg';
-export { default as InstagramBlackPic } from './instagram-black.svg';
-export { default as InstagramPic } from './instagram.svg';
-export { default as LoginPic } from './login.svg';
-export { default as LogoPic } from './logo.png';
-export { default as LogoutPic } from './logout.svg';
-export { default as NecklacePic } from './necklace.svg';
-export { default as ShoppingCartPic } from './shopping-cart.svg';
-export { default as TechnicsPic } from './technics.svg';
-export { default as UserPic } from './user.svg';
+export * from './static';
