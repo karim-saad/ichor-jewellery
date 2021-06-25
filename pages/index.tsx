@@ -22,15 +22,16 @@ const LandingPage: React.FC = () => {
           For now, please check out our Instagram and Etsy!
         </div>
         <div className='text-2xl mt-4 flex justify-center'>
-          <a href='https://www.instagram.com/ichor.jewellery/'>
+          <a className='mx-4' href='https://www.instagram.com/ichor.jewellery/'>
             <Image
-              className='h-16 w-16 mx-4'
               src={InstagramPic}
               alt='Instagram'
+              height='56'
+              width='56'
             />
           </a>
-          <a href='https://www.etsy.com/au/shop/IchorJewellery'>
-            <Image className='h-16 w-16 mx-4' src={EtsyPic} alt='Etsy' />
+          <a className='mx-4' href='https://www.etsy.com/au/shop/IchorJewellery'>
+            <Image src={EtsyPic} alt='Etsy' height='56' width='56' />
           </a>
         </div>
       </div>
