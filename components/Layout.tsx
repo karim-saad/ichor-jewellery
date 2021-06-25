@@ -1,9 +1,9 @@
+import { EtsyBlackPic, InstagramBlackPic, TechnicsPic } from '../public';
 import Head from 'next/head';
 import Image from 'next/image';
+import Navbar from '../components/Navbar';
 import React from 'react';
 
-import { EtsyBlackPic, InstagramBlackPic, TechnicsPic } from '../public';
-import Navbar from '../components/Navbar';
 
 interface Props {
   layoutProps: {

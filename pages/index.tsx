@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import React from 'react';
-import Layout from '../components/Layout';
-
 import { EtsyPic, InstagramPic } from '../public';
+import Image from 'next/image';
+import Layout from '../components/Layout';
+import React from 'react';
+
 
 const LandingPage: React.FC = () => {
   return (
