@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import React from 'react';
 import Layout from '../components/Layout';
+
+import { EtsyPic, InstagramPic } from '../public';
 
 const LandingPage: React.FC = () => {
   return (
@@ -20,14 +23,14 @@ const LandingPage: React.FC = () => {
         </div>
         <div className='text-2xl mt-4 flex justify-center'>
           <a href='https://www.instagram.com/ichor.jewellery/'>
-            <img
+            <Image
               className='h-16 w-16 mx-4'
-              src='/instagram.svg'
+              src={InstagramPic}
               alt='Instagram'
             />
           </a>
           <a href='https://www.etsy.com/au/shop/IchorJewellery'>
-            <img className='h-16 w-16 mx-4' src='/etsy.svg' alt='Etsy' />
+            <Image className='h-16 w-16 mx-4' src={EtsyPic} alt='Etsy' />
           </a>
         </div>
       </div>
