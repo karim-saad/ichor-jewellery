@@ -1,6 +1,6 @@
+import { LogoPic, ShoppingCartPic, UserPic } from '../public';
 import Image from 'next/image';
 import React from 'react';
-import { LogoPic, ShoppingCartPic, UserPic } from '../public';
 
 const Navbar: React.FC = () => {
     return <nav className='flex p-4 justify-between bg-yellow-100'>
