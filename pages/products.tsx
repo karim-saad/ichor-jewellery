@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import { Layout } from '../components';
 import { Product } from '../typings';
-import useSWR from 'swr';
+import fetch from 'node-fetch';
 
 export default function ProductPage({ products }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
@@ -14,7 +14,8 @@ export default function ProductPage({ products }: InferGetStaticPropsType<typeof
 }
 
 export const getStaticProps = async () => {
-    const { data: products } = useSWR<Product[]>('/api/products');
+    const res = await fetch('https://ichorjewellery.com/api/products');
+    const products: Product[] = await res.json();
 
     return {
         props: {
