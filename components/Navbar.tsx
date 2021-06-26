@@ -23,6 +23,6 @@ const Navbar: React.FC = () => {
                 className='ml-3' />
         </div>
     </nav>;
-}
+};
 
 export default Navbar;
