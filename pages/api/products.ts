@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { dynamoClient } from '../../lib/dynamoClient';
+import { dynamoClient } from '../../lib';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    res.status(200).json(dynamoClient.getProducts());
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    res.status(200).json(await dynamoClient.getProducts());
 }
