@@ -8,8 +8,7 @@ const Navbar: React.FC = () => {
             <Image
                 src={LogoPic}
                 alt='Ichor Jewellery'
-                height='36'
-                width='36'
+                height='36' width='36'
                 className='rounded' />
             <span className='text-xl ml-3'>Ichor Jewellery</span>
         </div>
@@ -18,8 +17,7 @@ const Navbar: React.FC = () => {
             <Image
                 src={ShoppingCartPic}
                 alt='Cart'
-                height='36'
-                width='36'
+                height='36' width='36'
                 className='ml-3' />
         </div>
     </nav>;

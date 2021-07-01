@@ -25,12 +25,15 @@ export default function LandingPage() {
                         <Image
                             src={InstagramPic}
                             alt='Instagram'
-                            height='56'
-                            width='56'
+                            height='56' width='56'
                         />
                     </a>
                     <a className='mx-4' href='https://www.etsy.com/au/shop/IchorJewellery'>
-                        <Image src={EtsyPic} alt='Etsy' height='56' width='56' />
+                        <Image
+                            src={EtsyPic}
+                            alt='Etsy'
+                            height='56' width='56'
+                        />
                     </a>
                 </div>
             </div>

@@ -40,8 +40,7 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
                             <Image
                                 src={TechnicsPic}
                                 alt='Construction'
-                                height='20'
-                                width='20'
+                                height='20' width='20'
                             />
                         </div>
                     </div>
@@ -55,16 +54,14 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
                             <Image
                                 src={InstagramBlackPic}
                                 alt='Instagram'
-                                height='24'
-                                width='24'
+                                height='24' width='24'
                             />
                         </a>
                         <a className='ml-3' href='https://www.etsy.com/au/shop/IchorJewellery'>
                             <Image
                                 src={EtsyBlackPic}
                                 alt='Etsy'
-                                height='24'
-                                width='24'
+                                height='24' width='24'
                             />
                         </a>
                     </div>
