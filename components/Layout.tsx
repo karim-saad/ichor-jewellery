@@ -46,7 +46,7 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
                     </div>
                     <Navbar />
                 </header>
-                <main className='flex-grow'>{children}</main>
+                <main className='flex-grow px-1 py-2'>{children}</main>
                 <footer className='relative flex justify-between p-3 bg-yellow-100'>
                     Ichor Jewellery 2021
                     <div className='flex'>
