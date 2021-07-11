@@ -9,19 +9,19 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
         <Head>
             <title>{title}</title>
             <meta charSet='utf-8' />
-            <meta property='viewport' content='initial-scale=1.0, width=device-width' />
+            <meta property='viewport' name='viewport' content='initial-scale=1.0, width=device-width' />
             <link rel='shortcut icon' href='/static/necklace.svg' />
             <meta
-                property='description'
+                property='description' name='description'
                 content="Bespoke jewellery made for all. Self expression is one's Ichor. Sydney, Australia."
             />
-            <meta property='robots' content='index, follow' />
-            <meta property='og:title' content='Ichor Jewellery' />
+            <meta property='robots' name='robots' content='index, follow' />
+            <meta property='og:title' name='og:title' content='Ichor Jewellery' />
             <meta
-                property='og:description'
+                property='og:description' name='og:description'
                 content="Bespoke jewellery made for all. Self expression is one's Ichor. Sydney, Australia."
             />
-            <meta property='og:image' content='https://ichorjewellery.com/logo.png' />
+            <meta property='og:image' name='og:image' content='https://ichorjewellery.com/logo.png' />
         </Head>
         <Box>
             <Banner />
