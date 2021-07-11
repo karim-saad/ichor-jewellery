@@ -23,10 +23,12 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
             />
             <meta property='og:image' content='https://ichorjewellery.com/logo.png' />
         </Head>
-        <Banner />
-        <Navbar />
-        <Box as='body'>
-            {children}
+        <Box>
+            <Banner />
+            <Navbar />
+            <Box as='body'>
+                {children}
+            </Box>
         </Box>
         <Spacer />
         <Footer />
