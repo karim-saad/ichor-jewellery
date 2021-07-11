@@ -1,18 +1,22 @@
-import { Image } from '@chakra-ui/react';
+import { AspectRatio, Divider, Flex, Image, Text } from '@chakra-ui/react';
 import { Product } from '../typings';
 import React from 'react';
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     const { description, displayName, internalName } = product;
-    return <div className='rounded flex flex-col'>
-        <Image src={`/${internalName}/thumbnail.jpg`} alt={displayName} boxSize='48' />
-        <p className=''>
+
+    return <Flex flexDir='column' maxW={['36', null, '56']}>
+        <AspectRatio ratio={1 / 1}>
+            <Image src={`/${internalName}/thumbnail.jpg`} alt={displayName} rounded='lg' />
+        </AspectRatio>
+        <Text fontSize={['md', null, 'lg']} fontWeight='semibold'>
             {displayName}
-        </p>
-        <p>
+        </Text>
+        <Divider />
+        <Text fontSize={['sm', null, 'inherit']}>
             {description}
-        </p>
-    </div>;
+        </Text>
+    </Flex>;
 };
 
 export default ProductCard;
