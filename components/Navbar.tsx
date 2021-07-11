@@ -1,18 +1,17 @@
-import Image from 'next/image';
-import { LogoPic } from '../public';
+import { Flex, HStack, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const Navbar: React.FC = () => {
-    return <nav className='flex p-3 justify-between bg-yellow-100'>
-        <div className='flex items-center'>
+    return <Flex as='nav' px='3' py='2' bgColor='yellow.300'>
+        <HStack spacing='2'>
             <Image
-                src={LogoPic}
-                alt='Ichor Jewellery'
-                height='36' width='36'
-                className='rounded' />
-            <span className='text-xl ml-3'>Ichor Jewellery</span>
-        </div>
-    </nav>;
+                src='/static/logo.png' alt='Ichor Jewellery' boxSize='16' rounded='md'
+            />
+            <Text as='h1' fontSize='2xl'>
+                Ichor Jewellery
+            </Text>
+        </HStack>
+    </Flex >;
 };
 
 export default Navbar;
