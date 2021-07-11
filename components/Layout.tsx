@@ -1,17 +1,11 @@
 import { Banner, Footer, Navbar } from '.';
+import { Box, Flex, Spacer } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 
-
-interface Props {
-    layoutProps: {
-        title: string;
-    };
-}
-
 const Layout: React.FC<Props> = ({ children, layoutProps }) => {
     const { title } = layoutProps;
-    return <>
+    return <Flex minH='100vh' flexDir='column' justify='space-between'>
         <Head>
             <title>{title}</title>
             <meta charSet='utf-8' />
@@ -31,9 +25,19 @@ const Layout: React.FC<Props> = ({ children, layoutProps }) => {
         </Head>
         <Banner />
         <Navbar />
-        <main className='flex-grow px-1 py-2'>{children}</main>
+        <Box as='body'>
+            {children}
+        </Box>
+        <Spacer />
         <Footer />
-    </>;
+    </Flex>;
 };
 
 export default Layout;
+
+interface Props {
+    layoutProps: {
+        title: string;
+    };
+}
+
