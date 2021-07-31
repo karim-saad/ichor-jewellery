@@ -3,6 +3,10 @@
         "next",
         "eslint:recommended"
     ],
+    "env": {
+        "node": true,
+        "commonjs": true
+    },
     "rules": {
         "quotes": [
             "error",
@@ -24,6 +28,9 @@
         "indent": [
             "error",
             4
+        ],
+        "no-console": [
+            "error"
         ]
     }
 }
