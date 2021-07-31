@@ -15,7 +15,7 @@ class IchorDynamo {
 
     public async getProducts(): Promise<Product[]> {
         const response = await this.client.scan({
-            TableName: 'Products'
+            TableName: 'products'
         }).promise();
         return response.Items as Product[];
     }
