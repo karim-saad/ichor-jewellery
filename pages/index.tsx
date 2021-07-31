@@ -18,7 +18,6 @@ export default function LandingPage({ products }: InferGetStaticPropsType<typeof
 }
 
 export const getStaticProps = async () => {
-    console.log(await ichorAxios.get('products'));
     const { data: { products } } = await ichorAxios.get<IchorAPI.Products.Response>('products');
     return {
         props: {
