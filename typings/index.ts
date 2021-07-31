@@ -1,2 +1,2 @@
 export * from './models';
-export * from './ichorAPI';
+export * from './IchorAPI';
