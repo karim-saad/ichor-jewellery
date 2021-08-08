@@ -1,27 +1,33 @@
-import { AspectRatio, Divider, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, LinkBox, LinkOverlay, Text, useBreakpointValue } from '@chakra-ui/react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Product } from '../typings';
 import React from 'react';
 
-const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
-    const { description, displayName, internalName } = product;
 
-    return <Flex flexDir='column' maxW={['40', '52']}>
-        <AspectRatio ratio={1 / 1}>
+const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+    const { displayName, internalName, price } = product;
+    const imageDimension = useBreakpointValue([140, 280]);
+
+    return <LinkBox d='flex' flexDir='column' maxW={imageDimension}>
+        <Box>
             <Image
-                srcSet={`${internalName}/0-small.jpg 160w, ${internalName}/0-medium.jpg 210w`}
-                sizes='(max-width: 30em) 160px, 210px'
-                src={`/${internalName}/0-medium.jpg`}
-                alt={displayName} rounded='lg'
+                src={`/${internalName}/0.jpg`}
+                alt={displayName}
+                height={imageDimension || 280}
+                width={imageDimension || 280}
             />
-        </AspectRatio>
-        <Text fontSize={['md', 'lg']} fontWeight='semibold'>
+        </Box>
+        <Text fontSize={['md', 'lg']} fontWeight='semibold' mt='2' align='center'>
             {displayName}
         </Text>
-        <Divider />
-        <Text fontSize={['sm', 'inherit']}>
-            {description}
+        <Text fontSize={['sm', 'md']} align='center'>
+            {`$${price} AUD`}
         </Text>
-    </Flex>;
+        <Link href={`/products/${internalName}`} passHref>
+            <LinkOverlay />
+        </Link>
+    </LinkBox>;
 };
 
 export default ProductCard;
