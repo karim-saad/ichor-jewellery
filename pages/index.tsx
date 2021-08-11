@@ -17,7 +17,7 @@ export default function LandingPage({ products }: InferGetStaticPropsType<typeof
             my={[2, null, 4]}
             spacing={[6, null, 8]}
         >
-            {products.sort((a, b) => (a.displayName > b.displayName) ? 1 : -1).map(product =>
+            {products.sort((a, b) => (a.name > b.name) ? 1 : -1).map(product =>
                 <WrapItem key={product.id}>
                     <ProductCard product={product} />
                 </WrapItem>
