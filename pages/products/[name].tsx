@@ -7,9 +7,14 @@ import { ichorAxios } from '../../lib';
 
 export default function ProductPage({ product }: InferGetStaticPropsType<typeof getStaticProps>) {
     const { description, displayName, internalName, price } = product;
+    const layoutProps = {
+        title: `Ichor Jewellery | ${displayName}`,
+        description,
+        imageUrl: `${internalName}/0.jpg`
+    };
     const imageDimension = useBreakpointValue([300, 500]);
 
-    return <Layout layoutProps={{ title: `Ichor Jewellery | ${displayName}` }}>
+    return <Layout layoutProps={layoutProps}>
         <Stack direction={['column', 'row']} p={[4, null, 8]} spacing='4'>
             <Image
                 src={`/${internalName}/0.jpg`}
