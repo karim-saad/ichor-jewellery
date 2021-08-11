@@ -4,8 +4,14 @@ import { Layout, ProductCard } from '../components';
 import { Wrap, WrapItem } from '@chakra-ui/react';
 import { ichorAxios } from '../lib';
 
+const layoutProps = {
+    title: 'Ichor Jewellery',
+    description: 'Bespoke jewellery made for all. Self expression is one\'s Ichor. Sydney, Australia.',
+    imageUrl: 'static/logo.png'
+};
+
 export default function LandingPage({ products }: InferGetStaticPropsType<typeof getStaticProps>) {
-    return <Layout layoutProps={{ title: 'Ichor Jewellery' }}>
+    return <Layout layoutProps={layoutProps}>
         <Wrap
             justify='center'
             my={[2, null, 4]}

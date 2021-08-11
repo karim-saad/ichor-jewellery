@@ -1,4 +1,5 @@
-import { Flex, HStack, Image, Link, Spacer, Text } from '@chakra-ui/react';
+import { Flex, HStack, Image, Spacer, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const Footer: React.FC = () => {
@@ -17,14 +18,20 @@ const Footer: React.FC = () => {
         </Text>
         <Spacer />
         <HStack spacing='2'>
-            <Link href='https://www.instagram.com/ichor.jewellery'>
+            <Link href='https://www.instagram.com/ichor.jewellery' passHref>
                 <Image
-                    src='/static/instagram.svg' alt='Instagram' boxSize='8'
+                    src='/static/instagram.svg'
+                    alt='Instagram'
+                    height='8'
+                    width='8'
                 />
             </Link>
-            <Link href='https://www.etsy.com/au/shop/IchorJewellery'>
+            <Link href='https://www.etsy.com/au/shop/IchorJewellery' passHref>
                 <Image
-                    src='/static/etsy.svg' alt='Etsy' boxSize='8'
+                    src='/static/etsy.svg'
+                    alt='Etsy'
+                    height='8'
+                    width='8'
                 />
             </Link>
         </HStack>
