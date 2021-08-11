@@ -6,25 +6,25 @@ import { Layout } from '../../components';
 import { ichorAxios } from '../../lib';
 
 export default function ProductPage({ product }: InferGetStaticPropsType<typeof getStaticProps>) {
-    const { description, displayName, internalName, price } = product;
+    const { description, handle, name, price } = product;
     const layoutProps = {
-        title: `Ichor Jewellery | ${displayName}`,
+        title: `Ichor Jewellery | ${name}`,
         description,
-        imageUrl: `${internalName}/0.jpg`
+        imageUrl: `${handle}/0.jpg`
     };
     const imageDimension = useBreakpointValue([300, 500]);
 
     return <Layout layoutProps={layoutProps}>
         <Stack direction={['column', 'row']} p={[4, null, 8]} spacing='4'>
             <Image
-                src={`/${internalName}/0.jpg`}
-                alt={displayName}
+                src={`/${handle}/0.jpg`}
+                alt={name}
                 height={imageDimension || 500}
                 width={imageDimension || 500}
             />
             <Box>
                 <Text fontSize={['lg', 'xl']} fontWeight='semibold'>
-                    {displayName}
+                    {name}
                 </Text>
                 <Text>
                     {`$${price} AUD`}
@@ -41,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { data: { products } } = await ichorAxios.get<IchorAPI.Products.Response>('products');
     return {
         paths: products.map(product => ({
-            params: { name: product.internalName }
+            params: { name: product.handle }
         })),
         fallback: false
     };
