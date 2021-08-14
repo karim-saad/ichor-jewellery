@@ -1,7 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { IchorAPI, Product } from '../typings';
 import { Layout, ProductCard } from '../components';
-import { Wrap, WrapItem } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 import { ichorAxios } from '../lib';
 
 const layoutProps = {
@@ -12,17 +12,20 @@ const layoutProps = {
 
 export default function LandingPage({ products }: InferGetStaticPropsType<typeof getStaticProps>) {
     return <Layout layoutProps={layoutProps}>
-        <Wrap
-            justify='center'
-            my={[2, null, 4]}
-            spacing={[6, null, 8]}
+        <SimpleGrid
+            minChildWidth={[140, 280]}
+            justifyItems='center'
+            px={[4, null, 8]}
+            py={[2, null, 4]}
+            spacingX={1}
+            spacingY={4}
         >
-            {products.sort((a, b) => (a.name > b.name) ? 1 : -1).map(product =>
-                <WrapItem key={product.id}>
-                    <ProductCard product={product} />
-                </WrapItem>
-            )}
-        </Wrap>
+            {
+                products
+                    .sort(sortFunctions.alphabetical)
+                    .map(product => <ProductCard key={product.id} product={product} />)
+            }
+        </SimpleGrid>
     </Layout>;
 }
 
@@ -33,4 +36,8 @@ export const getStaticProps: GetStaticProps<{ products: Product[] }> = async () 
             products
         }
     };
+};
+
+const sortFunctions = {
+    'alphabetical': (a: Product, b: Product) => { return (a.name > b.name) ? 1 : -1; }
 };

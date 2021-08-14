@@ -1,4 +1,4 @@
-import { Flex, HStack, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
+import { Flex, HStack, LinkBox, LinkOverlay, Text, VisuallyHidden } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -7,8 +7,8 @@ const Navbar: React.FC = () => {
     return <Flex
         as='nav'
         bgColor='yellow.300'
-        px={['4', null, '8']}
-        py='2'
+        px={[4, null, 8]}
+        py={2}
     >
         <LinkBox>
             <HStack spacing='4'>
@@ -23,7 +23,9 @@ const Navbar: React.FC = () => {
                 </Text>
             </HStack>
             <Link href='/' passHref>
-                <LinkOverlay />
+                <LinkOverlay>
+                    <VisuallyHidden>Home</VisuallyHidden>
+                </LinkOverlay>
             </Link>
         </LinkBox>
     </Flex >;
