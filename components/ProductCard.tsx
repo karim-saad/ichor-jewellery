@@ -1,4 +1,4 @@
-import { Box, LinkBox, LinkOverlay, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, LinkBox, LinkOverlay, Text, VisuallyHidden, useBreakpointValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '../typings';
@@ -18,14 +18,24 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                 width={imageDimension || 280}
             />
         </Box>
-        <Text fontSize={['md', 'lg']} fontWeight='semibold' mt='2' align='center'>
+        <Text
+            align='center'
+            fontSize={['md', 'lg']}
+            fontWeight='semibold'
+            mt={2}
+        >
             {name}
         </Text>
-        <Text fontSize={['sm', 'md']} align='center'>
+        <Text
+            align='center'
+            fontSize={['sm', 'md']}
+        >
             {`$${price} AUD`}
         </Text>
         <Link href={`/products/${handle}`} passHref>
-            <LinkOverlay />
+            <LinkOverlay>
+                <VisuallyHidden>{name}</VisuallyHidden>
+            </LinkOverlay>
         </Link>
     </LinkBox>;
 };

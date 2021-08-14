@@ -15,7 +15,7 @@ export default function ProductPage({ product }: InferGetStaticPropsType<typeof 
     const imageDimension = useBreakpointValue([300, 500]);
 
     return <Layout layoutProps={layoutProps}>
-        <Stack direction={['column', 'row']} p={[4, null, 8]} spacing='4'>
+        <Stack direction={['column', 'row']} p={[4, null, 8]} spacing={4}>
             <Image
                 src={`/${handle}/0.jpg`}
                 alt={name}
@@ -41,14 +41,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { data: { products } } = await ichorAxios.get<IchorAPI.Products.Response>('products');
     return {
         paths: products.map(product => ({
-            params: { name: product.handle }
+            params: { handle: product.handle }
         })),
         fallback: false
     };
 };
 
-export const getStaticProps: GetStaticProps<{ product: Product }, { name: string }> = async ({ params }) => {
-    const { data: { product } } = await ichorAxios.get<IchorAPI.Product.Response>(`product/${params?.name}`);
+export const getStaticProps: GetStaticProps<{ product: Product }, { handle: string }> = async ({ params }) => {
+    const { data: { product } } = await ichorAxios.get<IchorAPI.Product.Response>(`product/${params?.handle}`);
     return {
         props: {
             product
