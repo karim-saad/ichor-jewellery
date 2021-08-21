@@ -6,10 +6,4 @@ export namespace IchorAPI {
             products: ProductModel[]
         }
     }
-
-    export namespace Product {
-        export interface Response {
-            product: ProductModel
-        }
-    }
 }
