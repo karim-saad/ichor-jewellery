@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<{ product: Product }, { handle: string }> = async ({ params }) => {
-    const { data: { product } } = await ichorAxios.get<IchorAPI.Product.Response>(`product/${params?.handle}`);
+    const { data: { product } } = await ichorAxios.get<IchorAPI.Product.Response>(`products?handle=${params?.handle}`);
     return {
         props: {
             product
