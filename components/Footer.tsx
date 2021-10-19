@@ -9,12 +9,12 @@ const Footer: React.FC = () => {
         justify='space-between'
         align='center'
         px={2}
-        py={1}
+        py={2}
         bgColor='gray.100'
         border='1px'
         borderColor='gray.300'
     >
-        <Text>
+        <Text fontSize='lg'>
             Ichor Jewellery 2021
         </Text>
         <Spacer />
@@ -24,8 +24,8 @@ const Footer: React.FC = () => {
                     <Image
                         src='/static/instagram.svg'
                         alt='Instagram'
-                        height={24}
-                        width={24}
+                        height={36}
+                        width={36}
                     />
                 </Link>
             </Flex>
@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
                     <Image
                         src='/static/etsy.svg'
                         alt='Etsy'
-                        height={24}
-                        width={24}
+                        height={36}
+                        width={36}
                     />
                 </Link>
             </Flex>
