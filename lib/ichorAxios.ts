@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { getEnvironmentVariable } from '.';
 
 export const ichorAxios = axios.create({
-    baseURL: process.env.ICHOR_API_BASE_URL,
+    baseURL: getEnvironmentVariable('ICHOR_API_BASE_URL'),
     headers: {
-        Authorization: process.env.ICHOR_AUTH_TOKEN,
+        Authorization: getEnvironmentVariable('ICHOR_AUTH_TOKEN'),
         'Content-Type': 'application/json'
     }
 });
