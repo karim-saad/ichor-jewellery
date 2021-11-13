@@ -1,16 +1,16 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { IchorAPI, Product } from '../typings';
-import { Layout, ProductCard } from '../components';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { Layout, ListingCard } from '../components';
 import { SimpleGrid } from '@chakra-ui/react';
-import { ichorAxios } from '../lib';
+import { ListingWithImages, Shop } from '../typings';
+import { EtsyApi, getEnvironmentVariable } from '../lib';
 
-const layoutProps = {
-    title: 'Ichor Jewellery',
-    description: 'Bespoke jewellery made for all. Self expression is one\'s Ichor. Sydney, Australia.',
-    imageUrl: 'static/logo.png'
-};
+export default function LandingPage({ listingsWithImages, shop }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const layoutProps = {
+        title: 'Ichor Jewellery',
+        description: shop.title,
+        imageUrl: 'logo_black.png'
+    };
 
-export default function LandingPage({ products }: InferGetStaticPropsType<typeof getStaticProps>) {
     return <Layout layoutProps={layoutProps}>
         <SimpleGrid
             minChildWidth={[140, 280]}
@@ -21,23 +21,20 @@ export default function LandingPage({ products }: InferGetStaticPropsType<typeof
             spacingY={4}
         >
             {
-                products
-                    .sort(sortFunctions.alphabetical)
-                    .map(product => <ProductCard key={product.id} product={product} />)
+                listingsWithImages
+                    .sort(listing => listing.featuredRank)
+                    .map(listing => <ListingCard key={listing.listingId} {...listing} />)
             }
         </SimpleGrid>
     </Layout>;
 }
 
-export const getStaticProps: GetStaticProps<{ products: Product[] }> = async () => {
-    const { data: { products } } = await ichorAxios.get<IchorAPI.Products.Response>('products');
+export const getServerSideProps: GetServerSideProps<{ listingsWithImages: ListingWithImages[], shop: Shop }> = async () => {
+    const etsyApi = new EtsyApi(getEnvironmentVariable('ETSY_SHOP_ID'), getEnvironmentVariable('ETSY_API_KEY'));
     return {
         props: {
-            products
+            listingsWithImages: await etsyApi.getListingsWithImages(),
+            shop: await etsyApi.getShop()
         }
     };
-};
-
-const sortFunctions = {
-    'alphabetical': (a: Product, b: Product) => { return (a.name > b.name) ? 1 : -1; }
 };

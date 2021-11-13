@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <Flex align='center'>
                 <Link href='https://www.instagram.com/ichor.jewellery' passHref>
                     <Image
-                        src='/static/instagram.svg'
+                        src='/instagram.svg'
                         alt='Instagram'
                         height={36}
                         width={36}
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             <Flex align='center'>
                 <Link href='https://www.etsy.com/au/shop/IchorJewellery' passHref>
                     <Image
-                        src='/static/etsy.svg'
+                        src='/etsy.svg'
                         alt='Etsy'
                         height={36}
                         width={36}

@@ -1,2 +1,2 @@
-export * from './ichorAxios';
-export * from './utilities';
+export * from './etsyApi';
+export * from './util';

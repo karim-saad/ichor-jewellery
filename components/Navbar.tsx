@@ -1,34 +1,29 @@
-import { Flex, HStack, LinkBox, LinkOverlay, Text, VisuallyHidden } from '@chakra-ui/react';
+import { LinkBox, LinkOverlay, VisuallyHidden } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const Navbar: React.FC = () => {
-    return <Flex
+    return <LinkBox
         as='nav'
-        bgColor='yellow.300'
+        d='flex'
+        justifyContent='center'
+        bgColor='brand.100'
         px={[4, null, 8]}
         py={2}
     >
-        <LinkBox>
-            <HStack spacing='4'>
-                <Image
-                    src='/static/logo.png'
-                    alt='Ichor Jewellery'
-                    height={64}
-                    width={64}
-                />
-                <Text as='h1' fontSize='2xl' d={['none', null, 'inherit']}>
-                    Ichor Jewellery
-                </Text>
-            </HStack>
-            <Link href='/' passHref>
-                <LinkOverlay>
-                    <VisuallyHidden>Home</VisuallyHidden>
-                </LinkOverlay>
-            </Link>
-        </LinkBox>
-    </Flex >;
+        <Image
+            src='/logo_text_black.png'
+            alt='Ichor Jewellery'
+            height={64}
+            width={240}
+        />
+        <Link href='/' passHref>
+            <LinkOverlay>
+                <VisuallyHidden>Home</VisuallyHidden>
+            </LinkOverlay>
+        </Link>
+    </LinkBox>;
 };
 
 export default Navbar;
