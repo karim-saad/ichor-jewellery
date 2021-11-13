@@ -1,5 +1,6 @@
 import { Box, Center, HStack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -24,6 +25,9 @@ const Banner: React.FC = () => {
                     width={16}
                 />
             </Box>
+            <Link href='https://www.etsy.com/au/shop/IchorJewellery' passHref>
+                Please check out our Etsy for now!
+            </Link>
         </HStack>
     </Center>;
 };
