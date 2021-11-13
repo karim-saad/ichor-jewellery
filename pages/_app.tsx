@@ -4,7 +4,10 @@ import { AppProps } from 'next/app';
 const theme = extendTheme({
     colors: {
         brand: {
-            100: '#814851'
+            // solid yellow
+            100: '#ffb600',
+            // off white
+            200: '#f1eadd'
         }
     }
 });

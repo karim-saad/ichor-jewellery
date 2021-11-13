@@ -7,7 +7,7 @@ const Banner: React.FC = () => {
         <HStack spacing={2}>
             <Box>
                 <Image
-                    src='/static/technics.svg'
+                    src='/technics.svg'
                     alt='Construction'
                     height={16}
                     width={16}
@@ -18,7 +18,7 @@ const Banner: React.FC = () => {
             </Text>
             <Box>
                 <Image
-                    src='/static/technics.svg'
+                    src='/technics.svg'
                     alt='Construction'
                     height={16}
                     width={16}

@@ -1,36 +1,28 @@
 {
-    "extends": [
-        "next",
-        "eslint:recommended"
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-import"
     ],
-    "env": {
-        "node": true,
-        "commonjs": true
-    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "next/core-web-vitals"
+    ],
     "rules": {
         "quotes": [
             "error",
             "single"
         ],
-        "jsx-quotes": [
+        "@typescript-eslint/semi": [
             "error",
-            "prefer-single"
+            "always"
         ],
-        "eol-last": [
-            "error"
-        ],
-        "sort-imports": [
-            "error"
-        ],
-        "semi": [
-            "error"
-        ],
-        "indent": [
+        "no-multiple-empty-lines": [
             "error",
-            4
-        ],
-        "no-console": [
-            "error"
+            {
+                "max": 1
+            }
         ]
     }
 }
